@@ -9,6 +9,6 @@ jobs:
 
     steps:
     - name: Run a one-line script
-      run: echo ${{github}}
+      run: echo "writing github object to /tmp/gitActionResult.log"
     - name: Run a multi-line script
-      run: echo ${{github}} >> /tmp/gitActionResult.log
+      run: echo "${{toJSON(github)}}" >> /tmp/gitActionResult.log
